@@ -1,20 +1,23 @@
-package Acuario
-fun construirAcuario() {
-    val acuario1 = Acuario()
-    acuario1.imprimirTamano()
-    // altura y largo por defecto
-    val acuario2 = Acuario(ancho = 25)
-    acuario2.imprimirTamano()
-    // ancho por defecto
-    val acuario3 = Acuario(alto = 35, largo = 110)
-    acuario3.imprimirTamano()
-    // todo personalizado
-    val acuario4 = Acuario(ancho = 25, alto = 35, largo = 110)
-    acuario4.imprimirTamano()
+// main.kt
+import acuario.Delfin
+import acuario.Medusa
+import acuario.TortugaMarina
+
+fun gestionarAnimales() {
+    val delfin = Delfin()
+    val medusa = Medusa()
+    val tortugaMarina = TortugaMarina()
+
+    val animales = listOf(delfin, medusa, tortugaMarina)
+
+    for (animal in animales) {
+        println("Especie: ${animal.especie}")
+        animal.comer()
+        animal.moverse()
+        println()
+    }
 }
 
-
 fun main() {
-    construirAcuario()
-
+    gestionarAnimales()
 }
